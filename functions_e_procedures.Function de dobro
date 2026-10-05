@@ -1,0 +1,6 @@
+CREATE FUNCTION dobro(numero INT)
+RETURNS INT
+DETERMINISTIC
+RETURN numero * 2;
+
+SELECT dobro(10);
