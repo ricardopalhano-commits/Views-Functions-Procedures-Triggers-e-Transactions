@@ -1,0 +1,18 @@
+DELIMITER //
+
+CREATE FUNCTION situacao_aluno(p_media DECIMAL(5,2))
+RETURNS VARCHAR(20)
+DETERMINISTIC
+BEGIN
+    IF p_media >= 6 THEN
+        RETURN 'Aprovado';
+    ELSEIF p_media >= 4 THEN
+        RETURN 'Recuperação';
+    ELSE
+        RETURN 'Reprovado';
+    END IF;
+END //
+
+DELIMITER ;
+
+SELECT situacao_aluno(7.5) AS situacao;
